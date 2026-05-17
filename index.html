@@ -1,9 +1,97 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <titile>Hello World</titile>
-    </head>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="5">
+<title>520 活动榜</title>
+<style>
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #ffe8ee 0%, #fff5f8 50%, #fce4ec 100%);
+    font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #5a3a47;
+    min-height: 100vh;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.8em;
+    margin: 0 0 8px;
+    color: #d6336c;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 8px rgba(214, 51, 108, 0.15);
+  }
+  .subtitle {
+    text-align: center;
+    color: #a06077;
+    font-size: 0.95em;
+    margin-bottom: 32px;
+  }
+  table {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(214, 51, 108, 0.12);
+    overflow: hidden;
+    font-size: 1.05em;
+  }
+  thead th {
+    background: linear-gradient(180deg, #ffb3c8 0%, #ff8fab 100%);
+    color: white;
+    padding: 14px 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(214, 51, 108, 0.08);
+    text-align: center;
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr.rank-1 { background: rgba(255, 215, 0, 0.18); }
+  tbody tr.rank-2 { background: rgba(192, 192, 192, 0.18); }
+  tbody tr.rank-3 { background: rgba(205, 127, 50, 0.18); }
+  .rank-cell { font-weight: 700; font-size: 1.15em; }
+  .name-cell { font-weight: 600; color: #c2185b; }
+  .uid-cell { color: #8a6c76; font-size: 0.9em; }
+  .total-cell {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #d6336c;
+  }
+  .round-cell { color: #6c5862; }
+  .round-cell.empty { color: #d8c2cb; }
+  .footer {
+    text-align: center;
+    margin-top: 32px;
+    color: #b88b9a;
+    font-size: 0.85em;
+  }
+</style>
+</head>
+<body>
+  <h1>520 活动榜</h1>
+  <div class="subtitle">更新时间：2026-05-17 17:53:21</div>
+  <table>
+    <thead>
+      <tr>
+        <th>排名</th>
+        <th>用户</th>
+        <th>UID</th>
+        <th>总分</th>
+        <th>第1次</th><th>第2次</th><th>第3次</th><th>第4次</th><th>第5次</th><th>第6次</th><th>第7次</th><th>第8次</th><th>第9次</th><th>第10次</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="rank-1"><td class="rank-cell">1</td><td class="name-cell">🥇 风e飞翔</td><td class="uid-cell">5833211</td><td class="total-cell">10</td><td class="round-cell">+10</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td></tr>
+    </tbody>
+  </table>
+  <div class="footer">页面每 5 秒自动刷新</div>
+</body>
 </html>
