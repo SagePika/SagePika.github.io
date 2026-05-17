@@ -99,5 +99,22 @@
       <tr class="rank-10"><td class="rank-cell">10</td><td class="name-cell">凛月冬华</td><td class="uid-cell">1334951217</td><td class="total-cell">15</td><td class="round-cell">+5</td><td class="round-cell">+10</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td><td class="round-cell empty">—</td></tr>
     </tbody>
   </table>
+<script>
+(function() {
+  let lastVersion = null;
+  setInterval(async () => {
+    try {
+      const res = await fetch('version.json?_=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (lastVersion === null) {
+        lastVersion = data.version;
+      } else if (data.version !== lastVersion) {
+        location.reload();
+      }
+    } catch (e) {}
+  }, 3000);
+})();
+</script>
 </body>
 </html>
