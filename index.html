@@ -67,45 +67,40 @@
   }
   .round-cell { color: #6c5862; }
   .round-cell.empty { color: #d8c2cb; }
-  /* 小屏：收起历史列，行可展开 */
-  @media (max-width: 768px) {
+  /* 默认：所有设备都收起历史列，行可点击展开 */
+  thead th.round-col, tbody td.round-cell { display: none; }
+  tbody tr.main-row { cursor: pointer; }
+  tbody tr.main-row td:first-child::before {
+    content: '▸ ';
+    color: #d6336c;
+    display: inline-block;
+  }
+  tbody tr.main-row.open td:first-child::before { content: '▾ '; }
+  tbody tr.detail-row { display: none; }
+  tbody tr.detail-row.open { display: table-row; }
+  tbody tr.detail-row td {
+    padding: 10px 18px 14px;
+    background: rgba(255, 255, 255, 0.45);
+    text-align: left;
+    font-size: 0.95em;
+    color: #6c5862;
+  }
+  tbody tr.detail-row .history-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  tbody tr.detail-row .history-pill {
+    background: rgba(214, 51, 108, 0.1);
+    color: #c2185b;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  @media (max-width: 600px) {
     body { padding: 20px 10px; }
     h1 { font-size: 1.8em; letter-spacing: 2px; }
     table { width: 100%; font-size: 0.95em; }
-    thead th.round-col, tbody td.round-cell { display: none; }
-    tbody tr.main-row { cursor: pointer; }
-    tbody tr.main-row td:first-child::before {
-      content: '▸ ';
-      color: #d6336c;
-      transition: transform 0.2s;
-      display: inline-block;
-    }
-    tbody tr.main-row.open td:first-child::before { content: '▾ '; }
-    tbody tr.detail-row { display: none; }
-    tbody tr.detail-row.open { display: table-row; }
-    tbody tr.detail-row td {
-      padding: 8px 12px 14px;
-      background: rgba(255, 255, 255, 0.45);
-      text-align: left;
-      font-size: 0.9em;
-      color: #6c5862;
-    }
-    tbody tr.detail-row .history-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    tbody tr.detail-row .history-pill {
-      background: rgba(214, 51, 108, 0.1);
-      color: #c2185b;
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-weight: 600;
-    }
-  }
-  /* 大屏：detail-row 永远隐藏 */
-  @media (min-width: 769px) {
-    tbody tr.detail-row { display: none; }
   }
   .footer {
     text-align: center;
